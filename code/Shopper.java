@@ -33,11 +33,21 @@ public class Shopper {
         this.phoneNumber = phoneNumber;
     }
 
-    public void displayShopper() {
-        System.out.println("Shopper: " + name + ", Email: " + email + ", Phone: " + phoneNumber);
+    @Override
+    public String toString() {
+        return "Shopper{name='" + name + "', email='" + email + "', phone='" + phoneNumber + "'}";
     }
 
-    public boolean equals(Shopper other) {
-        return this.email.equals(other.email);
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Shopper shopper = (Shopper) obj;
+        return email.equals(shopper.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return email.hashCode();
     }
 }
