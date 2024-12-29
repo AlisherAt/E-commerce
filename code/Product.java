@@ -1,4 +1,5 @@
-public class Product {private String productName;
+public class Product {
+    private String productName;
     private double price;
     private int stock;
 
@@ -32,11 +33,21 @@ public class Product {private String productName;
         this.stock = stock;
     }
 
-    public void displayProduct() {
-        System.out.println("Product: " + productName + ", Price: $" + price + ", Stock: " + stock);
+    @Override
+    public String toString() {
+        return "Product{name='" + productName + "', price=" + price + ", stock=" + stock + "}";
     }
 
-    public boolean equals(Product other) {
-        return this.productName.equals(other.productName);
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Product product = (Product) obj;
+        return productName.equals(product.productName);
+    }
+
+    @Override
+    public int hashCode() {
+        return productName.hashCode();
     }
 }
