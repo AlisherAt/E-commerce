@@ -33,6 +33,13 @@ public class Product {
         this.stock = stock;
     }
 
+    public void displayProduct() {
+        System.out.println("Product Details:");
+        System.out.println("Name: " + productName);
+        System.out.println("Price: $" + price);
+        System.out.println("Stock: " + stock + " units");
+    }
+
     @Override
     public String toString() {
         return "Product{name='" + productName + "', price=" + price + ", stock=" + stock + "}";
