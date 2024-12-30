@@ -33,6 +33,13 @@ public class Shopper {
         this.phoneNumber = phoneNumber;
     }
 
+    public void displayShopper() {
+        System.out.println("Shopper Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Email: " + email);
+        System.out.println("Phone Number: " + phoneNumber);
+    }
+
     @Override
     public String toString() {
         return "Shopper{name='" + name + "', email='" + email + "', phone='" + phoneNumber + "'}";
