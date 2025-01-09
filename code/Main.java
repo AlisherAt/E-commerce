@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,16 +23,16 @@ public class Main {
             double price = scanner.nextDouble();
             System.out.print("Enter product stock quantity: ");
             int stock = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
             Product product = new Product(productName, price, stock);
             productList.add(product);
         }
 
-     
+
         System.out.println("\nEnter number of shoppers you want to add:");
         int shopperCount = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         for (int i = 0; i < shopperCount; i++) {
             System.out.println("\nEnter details for Shopper " + (i + 1));
@@ -48,7 +49,7 @@ public class Main {
 
         System.out.println("\nEnter number of orders you want to add:");
         int orderCount = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         for (int i = 0; i < orderCount; i++) {
             System.out.println("\nEnter details for Order " + (i + 1));
@@ -58,7 +59,7 @@ public class Main {
                 System.out.println((j + 1) + ". " + shopperList.get(j));
             }
             int shopperIndex = scanner.nextInt() - 1;
-            scanner.nextLine(); 
+            scanner.nextLine();
             Shopper selectedShopper = shopperList.get(shopperIndex);
 
             System.out.println("Select product from the list:");
@@ -66,7 +67,7 @@ public class Main {
                 System.out.println((j + 1) + ". " + productList.get(j));
             }
             int productIndex = scanner.nextInt() - 1;
-            scanner.nextLine(); 
+            scanner.nextLine();
             Product selectedProduct = productList.get(productIndex);
 
             System.out.print("Enter quantity: ");
@@ -84,4 +85,5 @@ public class Main {
         }
 
         scanner.close();
+    }
 }
